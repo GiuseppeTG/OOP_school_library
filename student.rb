@@ -1,7 +1,7 @@
-require_relative './person'
+require './person'
 
 class Student < Person
-  def initialize(name, age, parent_permission, classroom)
+  def initialize(age, name, parent_permission, classroom)
     super(name, age, parent_permission)
     @classroom = classroom
   end
@@ -10,3 +10,7 @@ class Student < Person
     "¯\(ツ)/¯"
   end
 end
+
+s1 = Student.new('Giuseppe', 15, false, 'orchestration')
+
+p s1.can_use_service?
