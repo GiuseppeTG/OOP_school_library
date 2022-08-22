@@ -10,7 +10,3 @@ class Student < Person
     "¯\(ツ)/¯"
   end
 end
-
-s1 = Student.new('Giuseppe', 15, false, 'orchestration')
-
-p s1.can_use_service?
