@@ -3,8 +3,8 @@ class Person
   attr_reader :id
 
   def initialize(age, name = 'Unknown', parent_permission: true)
-    @name = name
     @age = age
+    @name = name
     @parent_permission = parent_permission
     @id = Random.rand(1..10_000).to_s
   end
@@ -23,3 +23,6 @@ class Person
     true if @age >= 18 # private method
   end
 end
+
+p1 = Person.new(27, 'Giuseppe')
+p p1
