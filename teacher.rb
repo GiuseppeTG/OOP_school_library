@@ -10,6 +10,3 @@ class Teacher < Person
     true
   end
 end
-
-t1 = Teacher.new(62, 'Math', 'Dimitri')
-p t1

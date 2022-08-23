@@ -1,8 +1,14 @@
-class Person
+require_relative './nameable'
+require_relative './base_decorator'
+require_relative './capitalize_decorator'
+require_relative './trimmer_decorator'
+
+class Person < Nameable
   attr_accessor :age, :name
   attr_reader :id
 
   def initialize(age, name = 'Unknown', parent_permission: true)
+    super()
     @age = age
     @name = name
     @parent_permission = parent_permission
@@ -15,6 +21,10 @@ class Person
     false
   end
 
+  def correct_name
+    @name
+  end
+
   private
 
   def of_age?
@@ -24,5 +34,10 @@ class Person
   end
 end
 
-p1 = Person.new(27, 'Giuseppe')
-p p1
+person = Person.new(22, 'maximilianus')
+p person
+p person.correct_name
+capitalized_person = CapitalizeDecorator.new(person)
+p capitalized_person.correct_name
+capitalized_trimmed_person = TrimmerDecorator.new(capitalized_person)
+p capitalized_trimmed_person.correct_name

@@ -12,6 +12,3 @@ class Student < Person
     "¯\(ツ)/¯"
   end
 end
-
-s1 = Student.new(50, 'Math', 'Gabo')
-p s1
