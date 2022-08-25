@@ -77,7 +77,7 @@ class App
     name = gets.chomp
     puts 'Enter your age'
     age = gets.chomp.to_i
-    puts 'Enter classroom'
+    puts 'Enter your classroom'
     classroom = gets.chomp
     parent_permission = parent_permission?
     @people.push(Student.new(age, classroom, name, parent_permission: parent_permission))
