@@ -51,7 +51,6 @@ class App
     puts 'Book list'
     puts 'No books added yet' if @books.empty?
     @books.each { |book| puts("Title: #{book.title} - Author: #{book.author}") }
-    binding.pry
     init
   end
 
