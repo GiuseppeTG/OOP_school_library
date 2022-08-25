@@ -1,5 +1,7 @@
 # rubocop:disable Metrics/CyclomaticComplexity
 
+require 'pry'
+
 require './book'
 require './person'
 require './rental'
@@ -49,6 +51,7 @@ class App
     puts 'Book list'
     puts 'No books added yet' if @books.empty?
     @books.each { |book| puts("Title: #{book.title} - Author: #{book.author}") }
+    binding.pry
     init
   end
 
