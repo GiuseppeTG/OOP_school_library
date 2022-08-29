@@ -7,6 +7,8 @@ require './student'
 require './teacher'
 require './main_menu'
 require './list_books'
+require './list_people'
+require './create_person'
 class App
   attr_reader :books, :people, :rentals
 
@@ -42,58 +44,13 @@ class App
   end
 
   def list_people
-    puts 'People list'
-    puts 'No people added yet' if @people.empty?
-    @people.each { |person| puts person.name }
+    ListPeople.new.list_people(@people)
     init
   end
 
   def create_person
-    puts 'Are you a:
-    1 - Student
-    2 - Teacher'
-    person_input = gets.chomp.to_i
-    case person_input
-    when 1 then create_student
-    when 2 then create_teacher
-    else p 'Please enter a valid option, number 1 or 2'
-         create_person
-    end
-  end
-
-  def create_student
-    puts 'Enter your name'
-    name = gets.chomp
-    puts 'Enter your age'
-    age = gets.chomp.to_i
-    puts 'Enter your classroom'
-    classroom = gets.chomp
-    parent_permission = parent_permission?
-    @people.push(Student.new(age, classroom, name, parent_permission: parent_permission))
-    puts 'Student created'
-    init
-  end
-
-  def parent_permission?
-    puts 'Do you have parent permission? Y/N'
-    parent_permission = gets.chomp.upcase
-    case parent_permission
-    when 'Y' then true
-    when 'N' then false
-    else p 'Enter a valid value: Y or N'
-         parent_permission?
-    end
-  end
-
-  def create_teacher
-    puts 'Enter your name'
-    name = gets.chomp
-    puts 'Enter your age'
-    age = gets.chomp.to_i
-    puts 'Enter your specialization'
-    specialization = gets.chomp
-    @people.push(Teacher.new(age, specialization, name))
-    puts 'Teacher created'
+    person = CreatePerson.new(@people)
+    person.create_person
     init
   end
 
