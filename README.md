@@ -1,15 +1,20 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# Project Name
+# School Library
 
-> Description the project.
+Imagine that you are the librarian of OOP University, and you need a tool to record what books are in the library and who borrows them. The app that you will create will allow you to:
+
+- Add new students or teachers.
+- Add new books.
+- Save records of who borrowed a given book and when.
+
+And all of this will be built in a beautiful and well-organized way!
 
 
 ## Built With
 
-- Major languages
-- Frameworks
-- Technologies used
+- Major languages: Ruby
+- Technologies used: Git/GitHub, VSCode, Chrome
 
 ## Live Demo (if available)
 
@@ -17,10 +22,6 @@
 
 
 ## Getting Started
-
-**This is an example of how you may give instructions on setting up your project locally.**
-**Modify this file to match your project, remove sections that don't apply. For example: delete the testing section if the currect project doesn't require testing.**
-
 
 To get a local copy up and running follow these simple example steps.
 
@@ -32,6 +33,8 @@ To get a local copy up and running follow these simple example steps.
 
 ### Usage
 
+In the location of the project, run ruby main.rb in your terminal
+
 ### Run tests
 
 ### Deployment
@@ -40,17 +43,23 @@ To get a local copy up and running follow these simple example steps.
 
 ## Authors
 
-👤 **Author1**
+👤 **Giuseppe Tomasini**
 
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+- GitHub: [@GiuseppeTG](https://github.com/GiuseppeTG)
+- Twitter: [@giusetomasini](https://twitter.com/giusetomasini)
+- LinkedIn: [Giuseppe Tomasini](https://www.linkedin.com/in/giuseppe-tomasini-67ba101a8/)
 
-👤 **Author2**
+👤 **Dino Quispe**
 
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+- GitHub: [@dqarias](https://github.com/dqarias)
+- Twitter: [@DinoRonald7](https://twitter.com/DinoRonald7?t=Zanx9DXMEG9C_PNF3woZFg&s=08)
+- LinkedIn: [Dino Quispe](https://www.linkedin.com/in/dino-ronald-quispe-arias/)
+
+👤 **Mauricio Cantillo Moreno**
+
+- GitHub: [@Andyveloper](https://github.com/Andyveloper)
+- Twitter: [@MauroCantillo\_](https://twitter.com/MauroCantillo_)
+- LinkedIn: [Mauricio Cantillo Moreno](https://www.linkedin.com/in/mauricio-cantillo-moreno/)
 
 ## 🤝 Contributing
 
