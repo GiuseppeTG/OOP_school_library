@@ -33,6 +33,8 @@ To get a local copy up and running follow these simple example steps.
 
 ### Usage
 
+In the location of the project, run ruby main.rb in your terminal
+
 ### Run tests
 
 ### Deployment
@@ -46,6 +48,18 @@ To get a local copy up and running follow these simple example steps.
 - GitHub: [@GiuseppeTG](https://github.com/GiuseppeTG)
 - Twitter: [@giusetomasini](https://twitter.com/giusetomasini)
 - LinkedIn: [Giuseppe Tomasini](https://www.linkedin.com/in/giuseppe-tomasini-67ba101a8/)
+
+👤 **Dino Quispe**
+
+- GitHub: [@dqarias](https://github.com/dqarias)
+- Twitter: [@DinoRonald7](https://twitter.com/DinoRonald7?t=Zanx9DXMEG9C_PNF3woZFg&s=08)
+- LinkedIn: [Dino Quispe](https://www.linkedin.com/in/dino-ronald-quispe-arias/)
+
+👤 **Mauricio Cantillo Moreno**
+
+- GitHub: [@Andyveloper](https://github.com/Andyveloper)
+- Twitter: [@MauroCantillo\_](https://twitter.com/MauroCantillo_)
+- LinkedIn: [Mauricio Cantillo Moreno](https://www.linkedin.com/in/mauricio-cantillo-moreno/)
 
 ## 🤝 Contributing
 
