@@ -157,4 +157,3 @@ class App
 end
 
 # rubocop:enable Metrics/CyclomaticComplexity
-# rentals.person.id
