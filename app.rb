@@ -5,6 +5,8 @@ require './person'
 require './rental'
 require './student'
 require './teacher'
+require './main_menu'
+require './list_books'
 class App
   attr_reader :books, :people, :rentals
 
@@ -14,19 +16,8 @@ class App
     @rentals = []
   end
 
-  puts 'Welcome to School Library App!'
-
   def init
-    puts "Please choose an option by entering a number:
-        1 - List all books
-        2 - List all people
-        3 - Create a person
-        4 - Create a book
-        5 - Create a rental
-        6 - List all rentals for a given person ID
-        7 - Exit
-
-      Enter your option here:"
+    MainMenu.new.display_main_menu
     option = gets.chomp.to_i
     run_option(option)
   end
@@ -46,9 +37,7 @@ class App
   end
 
   def list_books
-    puts 'Book list'
-    puts 'No books added yet' if @books.empty?
-    @books.each { |book| puts("Title: #{book.title} - Author: #{book.author}") }
+    ListBooks.new.list_books(@books)
     init
   end
 
