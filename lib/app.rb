@@ -1,17 +1,17 @@
 # rubocop:disable Metrics/CyclomaticComplexity
 
-require './book'
-require './person'
-require './rental'
-require './student'
-require './teacher'
-require './main_menu'
-require './list_books'
-require './list_people'
-require './create_person'
-require './create_book'
-require './create_rental'
-require './list_rentals'
+require_relative './book'
+require_relative './person'
+require_relative './rental'
+require_relative './student'
+require_relative './teacher'
+require_relative './main_menu'
+require_relative './list_books'
+require_relative './list_people'
+require_relative './create_person'
+require_relative './create_book'
+require_relative './create_rental'
+require_relative './list_rentals'
 
 class App
   attr_reader :books, :people, :rentals
