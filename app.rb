@@ -9,6 +9,10 @@ require './main_menu'
 require './list_books'
 require './list_people'
 require './create_person'
+require './create_book'
+require './create_rental'
+require './list_rentals'
+
 class App
   attr_reader :books, :people, :rentals
 
@@ -55,45 +59,17 @@ class App
   end
 
   def create_book
-    puts 'Write book\'s title'
-    input_title = gets.chomp
-    puts 'Write book\'s author'
-    input_author = gets.chomp
-    @books.push(Book.new(input_title, input_author))
-    puts 'Book Created'
+    CreateBook.new.create_book(@books)
     init
   end
 
   def create_rental
-    puts 'Select a book by its number'
-    @books.each_with_index do |book, index|
-      puts "Number: #{index} - Title: #{book.title}, Author: #{book.author}"
-    end
-    book_id_input = gets.chomp.to_i
-    book = @books[book_id_input]
-    puts 'Select the person who is renting a book by its number (not ID)'
-    @people.each_with_index do |person, index|
-      puts "Number: #{index} - Role: #{person.class.name}, name: #{person.name}, ID: #{person.id}"
-    end
-    person_id_input = gets.chomp.to_i
-    person = @people[person_id_input]
-    puts 'Enter date [yyyy-mm-dd]'
-    date = gets.chomp
-    @rentals.push(Rental.new(person, book, date))
-    puts 'OMG you rented a book!'
+    CreateRental.new.create_rental(@books, @people, @rentals)
     init
   end
 
   def list_rentals
-    puts 'No rentals yet' if @rentals.empty?
-    puts 'Enter a person ID'
-    person_id_input = gets.chomp
-    selected_person = @people.find { |person| person.id == person_id_input }
-    puts 'This person has no rentals yet' if selected_person.rentals.empty?
-    selected_rentals = selected_person.rentals
-    selected_rentals.each do |rental|
-      puts "Name: #{rental.person.name}, Book: #{rental.book.title} - #{rental.book.author}, Date: #{rental.date}"
-    end
+    ListRentals.new.list_rentals(@people, @rentals)
     init
   end
 

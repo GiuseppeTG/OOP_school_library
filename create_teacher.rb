@@ -1,6 +1,6 @@
 class CreateTeacher
-def create_teacher(people)
-  @people = people
+  def create_teacher(people)
+    @people = people
     puts 'Enter your name'
     name = gets.chomp
     puts 'Enter your age'
@@ -11,6 +11,3 @@ def create_teacher(people)
     puts 'Teacher created'
   end
 end
-
-
-
