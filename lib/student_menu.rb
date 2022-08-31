@@ -1,6 +1,5 @@
-class CreateStudent
-  def create_student(people)
-    @people = people
+class StudentMenu
+  def student_options
     puts 'Enter your name'
     name = gets.chomp
     puts 'Enter your age'
@@ -8,8 +7,8 @@ class CreateStudent
     puts 'Enter your classroom'
     classroom = gets.chomp
     parent_permission = parent_permission?
-    @people.push(Student.new(age, classroom, name, parent_permission: parent_permission))
     puts 'Student created'
+    Student.new(age, classroom, name, parent_permission: parent_permission)
   end
 
   def parent_permission?

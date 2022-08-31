@@ -2,8 +2,23 @@
   "books": [
     {
       "json_class": "Book",
-      "title": "primer libro",
-      "author": "giuseppe haha"
+      "title": "oop",
+      "author": "weqirgwf"
+    },
+    {
+      "json_class": "Book",
+      "title": "uuuuuu",
+      "author": "ppppp"
+    },
+    {
+      "json_class": "Book",
+      "title": "hhhhh",
+      "author": "hhhhh"
+    },
+    {
+      "json_class": "Book",
+      "title": "ggggg",
+      "author": "ttttt"
     }
   ]
 }

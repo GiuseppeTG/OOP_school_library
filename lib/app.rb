@@ -7,10 +7,10 @@ require_relative './rental'
 require_relative './student'
 require_relative './teacher'
 require_relative './main_menu'
-require_relative './list_books'
-require_relative './list_people'
-require_relative './create_person'
-require_relative './create_book'
+require_relative './book_list_menu'
+require_relative './people_list_menu'
+require_relative './person_menu'
+require_relative './book_menu'
 require_relative './create_rental'
 require_relative './list_rentals'
 
@@ -18,20 +18,22 @@ class App
   attr_reader :books, :people, :rentals
 
   def initialize
-    books = JSON.parse(File.read('data/books.json'))
+    books = read_file('data/books.json')
+    people = read_file('data/people.json')
     @books = books['books']
-    @people = []
+    @people = people['people']
     @rentals = []
   end
 
   def read_file(file_name)
-    File.open(file_name) { |f| JSON.parse(f.read, create_additions: true) }
+    JSON.parse(File.read(file_name))
   end
 
   def write_files
     files = [
 
-      { name: 'books', data: @books }
+      { name: 'books', data: @books },
+      { name: 'people', data: @people }
 
     ]
 
@@ -66,31 +68,26 @@ class App
   end
 
   def list_books
-    puts 'Book list'
-    puts 'No books added yet' if @books.empty?
-    @books.each { |book| puts("Title: #{book['title']} - Author: #{book['author']}") }
+    BookListMenu.new.list_books(@books)
     init
   end
 
   def list_people
-    ListPeople.new.list_people(@people)
+    PeopleListMenu.new.list_people(@people)
     init
   end
 
   def create_person
-    person = CreatePerson.new(@people)
-    person.create_person
+    person = PersonMenu.new.person_options
+    @people << person
+    write_files
     init
   end
 
   def create_book
-    puts 'Write book\'s title'
-    input_title = gets.chomp
-    puts 'Write book\'s author'
-    input_author = gets.chomp
-    @books << Book.new(input_title, input_author)
+    book = BookMenu.new.book_options
+    @books << book
     write_files
-    puts 'Book Created'
     init
   end
 
