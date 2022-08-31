@@ -7,7 +7,16 @@
       "parent_permission": true,
       "id": "6015",
       "rentals": [
-
+        {
+          "json_class": "Rental",
+          "book": "Title: oop - Author: weqirgwf",
+          "date": "0"
+        },
+        {
+          "json_class": "Rental",
+          "book": "Title: ggggg - Author: ttttt",
+          "date": "1212"
+        }
       ],
       "classroom": "math"
     },
@@ -17,7 +26,23 @@
       "name": "Dino",
       "id": "3116",
       "rentals": [
-
+        {
+          "json_class": "Rental",
+          "person": [
+            "Dino",
+            "3116"
+          ],
+          "book": [
+            "uuuuuu",
+            "ppppp"
+          ],
+          "date": "1"
+        },
+        {
+          "json_class": "Rental",
+          "book": "Title: uuuuuu - Author: ppppp",
+          "date": "1"
+        }
       ],
       "specialization": "Ruby"
     }

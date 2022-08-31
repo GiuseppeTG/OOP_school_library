@@ -92,7 +92,25 @@ class App
   end
 
   def create_rental
-    CreateRental.new.create_rental(@books, @people, @rentals)
+    puts 'Select a book by its number'
+    @books.each_with_index do |book, index|
+      puts "Number: #{index} - Title: #{book['title']}, Author: #{book['author']}"
+    end
+    book_id_input = gets.chomp.to_i
+    book = @books[book_id_input]
+    p book
+    puts 'Select the person who is renting a book by its number (not ID)'
+    @people.each_with_index do |person, index|
+      puts "Number: #{index} - Role: #{person['json_class']}, name: #{person['name']}, ID: #{person['id']}"
+    end
+    person_id_input = gets.chomp.to_i
+    person = @people[person_id_input]
+    p person
+    puts 'Enter date [yyyy-mm-dd]'
+    date = gets.chomp
+    Rental.new(person, book, date)
+    write_files
+    puts 'OMG you rented a book!'
     init
   end
 
