@@ -6,7 +6,13 @@
       "name": "giuseppe",
       "parent_permission": true,
       "id": "6015",
-      "rentals": [],
+      "rentals": [
+        {
+          "json_class": "Rental",
+          "book": "Title: oop - Author: weqirgwf",
+          "date": "2022"
+        }
+      ],
       "classroom": "math"
     },
     {
@@ -19,6 +25,11 @@
           "json_class": "Rental",
           "book": "Title: uuuuuu - Author: ppppp",
           "date": "1"
+        },
+        {
+          "json_class": "Rental",
+          "book": "Title: uuuuuu - Author: ppppp",
+          "date": "2022"
         }
       ],
       "specialization": "Ruby"
