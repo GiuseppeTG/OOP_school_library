@@ -11,7 +11,7 @@ require_relative './book_list_menu'
 require_relative './people_list_menu'
 require_relative './person_menu'
 require_relative './book_menu'
-require_relative './create_rental'
+# require_relative './create_rental'
 require_relative './list_rentals'
 
 class App
@@ -98,7 +98,6 @@ class App
     end
     book_id_input = gets.chomp.to_i
     book = @books[book_id_input]
-    p book
     puts 'Select the person who is renting a book by its number (not ID)'
     @people.each_with_index do |person, index|
       puts "Number: #{index} - Role: #{person['json_class']}, name: #{person['name']}, ID: #{person['id']}"

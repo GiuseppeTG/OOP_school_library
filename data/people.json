@@ -8,6 +8,7 @@
       "id": "6015",
       "rentals": [
         {
+<<<<<<< HEAD
           "json_class": "Rental",
           "book": "Title: oop - Author: weqirgwf",
           "date": "0"
@@ -16,6 +17,11 @@
           "json_class": "Rental",
           "book": "Title: ggggg - Author: ttttt",
           "date": "1212"
+=======
+          "title": "oop",
+          "author": "weqirgwf",
+          "date": "2022-02-01"
+>>>>>>> af3e463435bff307a5d956f9e1e76a858bff4e8a
         }
       ],
       "classroom": "math"
