@@ -1,4 +1,5 @@
 # rubocop:disable Metrics/CyclomaticComplexity
+require 'json'
 
 require_relative './book'
 require_relative './person'
@@ -17,9 +18,14 @@ class App
   attr_reader :books, :people, :rentals
 
   def initialize
-    @books = []
+    books = JSON.parse(File.read('data/books.json'))
+    @books = books['books']
     @people = []
     @rentals = []
+  end
+
+  def read_file(file_name)
+    File.open(file_name) { |f| JSON.parse(f.read, create_additions: true) }
   end
 
   def init
@@ -59,7 +65,15 @@ class App
   end
 
   def create_book
-    CreateBook.new.create_book(@books)
+    puts 'Write book\'s title'
+    input_title = gets.chomp
+    puts 'Write book\'s author'
+    input_author = gets.chomp
+    @books << Book.new(input_title, input_author)
+    data_hash = { 'books' => @books }
+    json = JSON.pretty_generate(data_hash)
+    File.write('data/books.json', json)
+    puts 'Book Created'
     init
   end
 
