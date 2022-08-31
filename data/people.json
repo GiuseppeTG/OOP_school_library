@@ -1,0 +1,43 @@
+{
+  "people": [
+    {
+      "json_class": "Student",
+      "age": 27,
+      "name": "giuseppe",
+      "parent_permission": true,
+      "id": "6015",
+      "rentals": [
+        {
+          "json_class": "Rental",
+          "book": "Title: oop - Author: weqirgwf",
+          "date": "2022"
+        },
+        {
+          "json_class": "Rental",
+          "book": "Title: oop - Author: weqirgwf",
+          "date": "2021"
+        }
+      ],
+      "classroom": "math"
+    },
+    {
+      "json_class": "Teacher",
+      "age": 34,
+      "name": "Dino",
+      "id": "3116",
+      "rentals": [
+        {
+          "json_class": "Rental",
+          "book": "Title: uuuuuu - Author: ppppp",
+          "date": "1"
+        },
+        {
+          "json_class": "Rental",
+          "book": "Title: oop - Author: weqirgwf",
+          "date": "2022"
+        }
+      ],
+      "specialization": "Ruby"
+    }
+  ]
+}
