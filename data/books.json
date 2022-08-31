@@ -1,3 +1,9 @@
 {
-  "books": []
+  "books": [
+    {
+      "json_class": "Book",
+      "title": "primer libro",
+      "author": "giuseppe haha"
+    }
+  ]
 }

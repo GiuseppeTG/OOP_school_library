@@ -28,7 +28,24 @@ class App
     File.open(file_name) { |f| JSON.parse(f.read, create_additions: true) }
   end
 
+  def write_files
+    files = [
+
+      { name: 'books', data: @books }
+
+    ]
+
+    files.each do |file|
+      File.open("data/#{file[:name]}.json", 'w') do |f|
+        data_hash = { file[:name] => file[:data] }
+        json = JSON.pretty_generate(data_hash)
+        f.write(json)
+      end
+    end
+  end
+
   def init
+    initialize
     MainMenu.new.display_main_menu
     option = gets.chomp.to_i
     run_option(option)
@@ -49,7 +66,9 @@ class App
   end
 
   def list_books
-    ListBooks.new.list_books(@books)
+    puts 'Book list'
+    puts 'No books added yet' if @books.empty?
+    @books.each { |book| puts("Title: #{book['title']} - Author: #{book['author']}") }
     init
   end
 
@@ -70,9 +89,7 @@ class App
     puts 'Write book\'s author'
     input_author = gets.chomp
     @books << Book.new(input_title, input_author)
-    data_hash = { 'books' => @books }
-    json = JSON.pretty_generate(data_hash)
-    File.write('data/books.json', json)
+    write_files
     puts 'Book Created'
     init
   end
