@@ -6,7 +6,18 @@
       "name": "giuseppe",
       "parent_permission": true,
       "id": "6015",
-      "rentals": [],
+      "rentals": [
+        {
+          "json_class": "Rental",
+          "book": "Title: oop - Author: weqirgwf",
+          "date": "0"
+        },
+        {
+          "json_class": "Rental",
+          "book": "Title: hhhhh - Author: hhhhh",
+          "date": "54545"
+        }
+      ],
       "classroom": "math"
     },
     {
