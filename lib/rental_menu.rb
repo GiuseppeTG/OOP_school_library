@@ -12,7 +12,6 @@ class RentalMenu
     end
     person_id_input = gets.chomp.to_i
     person = people[person_id_input]
-    p person
     puts 'Enter date [yyyy-mm-dd]'
     date = gets.chomp
     puts 'OMG you rented a book!'
