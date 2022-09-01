@@ -1,3 +1,6 @@
+require_relative './teacher'
+require_relative './book'
+
 class Rental
   attr_accessor :date, :book, :person
 
@@ -8,6 +11,18 @@ class Rental
     person.rentals << self
 
     @book = book
-    book.rentals << self
+  end
+
+  def to_json(*args)
+    {
+      JSON.create_id => self.class.name,
+      # 'person' => [@person['name'], @person['id']],
+      'book' => "Title: #{@book['title']} - Author: #{@book['author']}",
+      'date' => @date
+    }.to_json(*args)
+  end
+
+  def self.json_create(rental)
+    new(rental['book'], rental['date'])
   end
 end

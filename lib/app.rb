@@ -1,4 +1,5 @@
 # rubocop:disable Metrics/CyclomaticComplexity
+require 'json'
 
 require_relative './book'
 require_relative './person'
@@ -6,23 +7,47 @@ require_relative './rental'
 require_relative './student'
 require_relative './teacher'
 require_relative './main_menu'
-require_relative './list_books'
-require_relative './list_people'
-require_relative './create_person'
-require_relative './create_book'
-require_relative './create_rental'
-require_relative './list_rentals'
+require_relative './book_list_menu'
+require_relative './people_list_menu'
+require_relative './person_menu'
+require_relative './book_menu'
+require_relative './rental_menu'
+require_relative './rentals_list_menu'
 
 class App
   attr_reader :books, :people, :rentals
 
   def initialize
-    @books = []
-    @people = []
+    books = read_file('data/books.json')
+    people = read_file('data/people.json')
+    @books = books['books']
+    @people = people['people']
     @rentals = []
   end
 
+  def read_file(file_name)
+    JSON.parse(File.read(file_name))
+  end
+
+  def write_files
+    files = [
+
+      { name: 'books', data: @books },
+      { name: 'people', data: @people }
+
+    ]
+
+    files.each do |file|
+      File.open("data/#{file[:name]}.json", 'w') do |f|
+        data_hash = { file[:name] => file[:data] }
+        json = JSON.pretty_generate(data_hash)
+        f.write(json)
+      end
+    end
+  end
+
   def init
+    initialize
     MainMenu.new.display_main_menu
     option = gets.chomp.to_i
     run_option(option)
@@ -43,33 +68,37 @@ class App
   end
 
   def list_books
-    ListBooks.new.list_books(@books)
+    BookListMenu.new.list_books(@books)
     init
   end
 
   def list_people
-    ListPeople.new.list_people(@people)
+    PeopleListMenu.new.list_people(@people)
     init
   end
 
   def create_person
-    person = CreatePerson.new(@people)
-    person.create_person
+    person = PersonMenu.new.person_options
+    @people << person
+    write_files
     init
   end
 
   def create_book
-    CreateBook.new.create_book(@books)
+    book = BookMenu.new.book_options
+    @books << book
+    write_files
     init
   end
 
   def create_rental
-    CreateRental.new.create_rental(@books, @people, @rentals)
+    RentalMenu.new.rental_options(@books, @people)
+    write_files
     init
   end
 
   def list_rentals
-    ListRentals.new.list_rentals(@people, @rentals)
+    RentalsListMenu.new.list_rentals(@people)
     init
   end
 
