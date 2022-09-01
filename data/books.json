@@ -2,23 +2,8 @@
   "books": [
     {
       "json_class": "Book",
-      "title": "oop",
-      "author": "weqirgwf"
-    },
-    {
-      "json_class": "Book",
-      "title": "uuuuuu",
-      "author": "ppppp"
-    },
-    {
-      "json_class": "Book",
-      "title": "hhhhh",
-      "author": "hhhhh"
-    },
-    {
-      "json_class": "Book",
-      "title": "ggggg",
-      "author": "ttttt"
+      "title": "aprendiendo a sumar",
+      "author": "Dino"
     }
   ]
 }

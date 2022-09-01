@@ -38,6 +38,21 @@
         }
       ],
       "specialization": "Ruby"
+    },
+    {
+      "json_class": "Student",
+      "age": 27,
+      "name": "Mauro",
+      "parent_permission": true,
+      "id": "8559",
+      "rentals": [
+        {
+          "json_class": "Rental",
+          "book": "Title: aprendiendo a sumar - Author: Dino",
+          "date": "2022-08-31"
+        }
+      ],
+      "classroom": "Segundo de primaria"
     }
   ]
 }
